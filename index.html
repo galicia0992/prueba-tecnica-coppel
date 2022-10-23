@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mb-5">
+        <h1 class="p-2">Control de inventario</h1>
+    </div>
+    <div class="d-flex flex-column positionAbsolute">
+        <nav class="sideBar bShadow d-flex flex-column pb-3 pt-3">
+            <div class="mb-2 d-flex flex-row justify-content-start align-items-center">
+                <img src="/assets/icons/home.png" alt="">
+                <button id="home">Return</button>
+            </div>
+            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center">
+                <img src="/assets/icons/alta.png" alt="" srcset="">
+                <button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal" id="alta">
+                    Alta
+                  </button>
+            </div>
+            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center">
+                <img src="/assets/icons/delete.png" alt="" srcset="">
+                <button class="" id="baja">Baja</button>
+            </div>
+            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center">
+                <img src="/assets/icons/cambios.png" alt="" srcset="">
+                <button class="" id="modificar">Modificar</button>
+            </div>
+            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center">
+                <img src="/assets/icons/inventario.png" alt="" srcset="">
+                <button class="" id="dcf">Departamentos</button>
+            </div>
+        </nav>
+    </div>
+    <div class="d-flex justify-content-center bshadow" id="formSku">
+        <form>
+            <div class="form-group">
+              <label for="inputSku">Consulta por Sku</label>
+              <input type="text" class="form-control" id="inputSku" placeholder="Ingresa Sku">
+              <small class="form-text text-muted" id="mensaje">Verifica si el SKU existe</small>
+            </div>
+            <button class="btn btn-primary" id="buscarSku">Buscar</button>
+          </form>
+    </div>
+    <div class="d-flex justify-content-center bshadow d-none" id="formSkuEliminar">
+        <form>
+            <div class="form-group">
+              <label for="inputSkuEliminar">Consulta por Sku</label>
+              <input type="text" class="form-control" id="inputSkuEliminar" placeholder="Ingresa Sku">
+              <small class="form-text text-muted" id="mensajeEliminar">Verifica si el SKU existe</small>
+            </div>
+            <button class="btn btn-danger" id="eliminarArticulo">Eliminar</button>
+          </form>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Sku: </p>
+              <div class="d-flex flex-row justify-content-between">
+              <input type="text" name="" id="sku">
+              <button class="btn btn-warning" id="btnValidarSku">Validar</button>
+              </div>
+              <p>Articulo: </p>
+              <input type="text" name="" id="articulo" disabled>
+              <p>Marca: </p>
+              <input type="text" name="" id="marca" disabled>
+              <p>Modelo: </p>
+              <input type="text" name="" id="modelo" disabled>
+              <p>Departamento: </p>
+              <select name="" id="departamento" disabled>
+                
+                
+              </select>
+              <p>Clase: </p>
+              <select name="" id="clase" disabled>
+                
+              </select>
+              <p>Familia: </p>
+              <select name="" id="familia" disabled>
+                
+              </select>
+              <p>Stock: </p>
+              <input type="text" name="" id="stock" disabled>
+              <p>Cantidad: </p>
+              <input type="text" name="" id="cantidad" disabled>
+              <p>Fecha de Alta: </p>
+              <input type="date" name="" id="fechaAlta" disabled>
+              <p>Fecha de Baja: </p>
+              <input type="date" name="" id="fechaBaja" disabled>
+              <label for="Descontinuado">
+                <input type="checkbox" id="descontinuado" disabled />Descontinuado</label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary sv" id="guardar" disabled>Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="d-flex justify-content-center">
+        <TABLE BORDER class="table d-flex justify-content-center d-none" id="tablaDepartamentos">
+            <TR id="hdDepartamentos">
+                <TH>Numero de Departamento</TH>
+                <TH>Nombre de Departamento</TH>
+                <TH>Numero de Clase</TH>
+                <TH>Nombre de Clase</TH>
+                <TH>Numero de Familia</TH>
+                <TH>Nombre de Familia</TH>
+            </TR>
+            
+        </TABLE>
+        <TABLE BORDER class="table d-flex justify-content-center d-none" id="tablaArticulos">
+            <TR id="hdArticulos">
+                <TH>Marca</TH>
+                <TH>Modelo</TH>
+                <TH>Departamento</TH>
+                <TH>Clase</TH>
+                <TH>Familia</TH>
+                <TH>fecha de alta</TH>
+                <TH>stock</TH>
+                <TH>cantidad</TH>
+                <TH>descontinuado</TH>
+                <TH>fecha de baja</TH>
+            </TR>
+            
+        </TABLE>
+    </div>
+</body>
+<script src="/js/main.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</html>

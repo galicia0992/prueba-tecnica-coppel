@@ -1,0 +1,395 @@
+{
+  "articulos": [
+    {
+      "id": 1,
+      "sku": 1,
+      "nombreArticulo": "lavadora",
+      "marca": "mabe",
+      "modelo": "mb-11",
+      "departamento": "domesticos",
+      "clase": "linea blanca",
+      "familia": "lavadora",
+      "fechaAlta": "",
+      "stock": 0,
+      "cantidad": 1,
+      "descontinuado": 0,
+      "fechaBaja": ""
+    },
+    {
+      "id": 2,
+      "sku": 2,
+      "nombreArticulo": "celular",
+      "marca": "apple",
+      "modelo": "iphone 12",
+      "departamento": "electronica",
+      "clase": "smartophones",
+      "familia": "apple",
+      "fechaAlta": "",
+      "stock": 0,
+      "cantidad": 1,
+      "descontinuado": 1,
+      "fechaBaja": ""
+    },
+    {
+      "sku": 4,
+      "articulo": "motocicleta",
+      "marca": "italika",
+      "modelo": "it55",
+      "departamento": "vehiculos",
+      "clase": "motocicleta",
+      "familia": "motocicleta estandar",
+      "stock": "10",
+      "cantidad": "1",
+      "fechaAlta": "2022-10-22",
+      "fechaBaja": "",
+      "descontinuado": "on",
+      "id": 4
+    }
+  ],
+  "departamentosClasesFamilias": [
+    {
+      "departamentos": [
+        {
+          "departamento": "domesticos",
+          "noDepartamento": 1,
+          "clases": [
+            {
+              "clase": "comestibles",
+              "noClase": 1,
+              "familias": [
+                {
+                  "familia": "sin nombre",
+                  "noFamilia": "00"
+                }
+              ]
+            },
+            {
+              "clase": "licuadoras",
+              "noClase": 2,
+              "familias": [
+                {
+                  "familia": "licuadoras",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "exclusivo coppel.com",
+                  "noFamilia": "02"
+                }
+              ]
+            },
+            {
+              "clase": "batidoras",
+              "noClase": 3,
+              "familias": [
+                {
+                  "familia": "batidora manual",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "procesador",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "picadora",
+                  "noFamilia": "03"
+                },
+                {
+                  "familia": "batidora pedestal",
+                  "noFamilia": "04"
+                },
+                {
+                  "familia": "batidora fuente de sodas",
+                  "noFamilia": "05"
+                },
+                {
+                  "familia": "multipracticos",
+                  "noFamilia": "06"
+                },
+                {
+                  "familia": "exclusivo coppel.com",
+                  "noFamilia": "07"
+                }
+              ]
+            },
+            {
+              "clase": "cafeteras",
+              "noClase": 4,
+              "familias": [
+                {
+                  "familia": "cafeteras",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "percoladoras",
+                  "noFamilia": "02"
+                }
+              ]
+            },
+            {
+              "clase": "linea blanca",
+              "noClase": 5,
+              "familias": [
+                {
+                  "familia": "lavadora",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "secadora",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "refrigerador",
+                  "noFamilia": "03"
+                },
+                {
+                  "familia": "estufa",
+                  "noFamilia": "04"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "departamento": "electronica",
+          "noDepartamento": 2,
+          "clases": [
+            {
+              "clase": "amplificadores car audio",
+              "noClase": 1,
+              "familias": [
+                {
+                  "familia": "amplificador/receptor",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "kit instalacion",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "amplificadores coppel",
+                  "noFamilia": "03"
+                }
+              ]
+            },
+            {
+              "clase": "auto stereos",
+              "noClase": 2,
+              "familias": [
+                {
+                  "familia": "autoestereo cd c/bocina",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "accesorios car audio",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "amplificador",
+                  "noFamilia": "03"
+                },
+                {
+                  "familia": "alarma auto/casa/oficina",
+                  "noFamilia": "04"
+                },
+                {
+                  "familia": "sin mecanismo",
+                  "noFamilia": "05"
+                },
+                {
+                  "familia": "con cd",
+                  "noFamilia": "06"
+                },
+                {
+                  "familia": "multimedia",
+                  "noFamilia": "07"
+                },
+                {
+                  "familia": "paquete sin mecanismo",
+                  "noFamilia": "08"
+                },
+                {
+                  "familia": "paquete con cd",
+                  "noFamilia": "09"
+                }
+              ]
+            },
+            {
+              "clase": "consolas de videojuego",
+              "noClase": 3,
+              "familias": [
+                {
+                  "familia": "xbox",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "play station",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "nintendo",
+                  "noFamilia": "03"
+                }
+              ]
+            },
+            {
+              "clase": "smartphones",
+              "noClase": 4,
+              "familias": [
+                {
+                  "familia": "samsung",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "apple",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "motorola",
+                  "noFamilia": "03"
+                },
+                {
+                  "familia": "huawei",
+                  "noFamilia": "04"
+                },
+                {
+                  "familia": "oppo",
+                  "noFamilia": "05"
+                },
+                {
+                  "familia": "alcatel",
+                  "noFamilia": "06"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "departamento": "mueble suelto",
+          "noDepartamento": 3,
+          "clases": [
+            {
+              "clase": "colchon",
+              "noClase": 1,
+              "familias": [
+                {
+                  "familia": "pillow top ks",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "pillow doble ks",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "hule espuma ks",
+                  "noFamilia": "03"
+                }
+              ]
+            },
+            {
+              "clase": "juego box",
+              "noClase": 2,
+              "familias": [
+                {
+                  "familia": "estandar individual",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "pillow top individual",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "pillow top doble individual",
+                  "noFamilia": "03"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "departamento": "salas recamaras comedores",
+          "noDepartamento": 4,
+          "clases": [
+            {
+              "clase": "salas",
+              "noClase": 1,
+              "familias": [
+                {
+                  "familia": "esquineras superiores",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "tipo L seccional",
+                  "noFamilia": "02"
+                }
+              ]
+            },
+            {
+              "clase": "complementos para sala",
+              "noClase": 2,
+              "familias": [
+                {
+                  "familia": "sillon ocacional",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "puff",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "baul",
+                  "noFamilia": "03"
+                },
+                {
+                  "familia": "taburete",
+                  "noFamilia": "04"
+                }
+              ]
+            },
+            {
+              "clase": "sofa cama",
+              "noClase": 3,
+              "familias": [
+                {
+                  "familia": "sofa cama tapizado",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "sofa cama clasico",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "estudio",
+                  "noFamilia": "03"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "departamento": "vehiculos",
+          "noDepartamento": 5,
+          "clases": [
+            {
+              "clase": "motocicleta",
+              "noClase": 1,
+              "familias": [
+                {
+                  "familia": "motoneta",
+                  "noFamilia": "01"
+                },
+                {
+                  "familia": "motocicleta deportiva",
+                  "noFamilia": "02"
+                },
+                {
+                  "familia": "motocicleta estandar",
+                  "noFamilia": "03"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
