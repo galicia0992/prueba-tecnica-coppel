@@ -30,9 +30,8 @@ export const altaArticulo = async (objArticulo) => {
         "Content-Type": "application/json",
       },
     });
-    console.log("correcto");
   } catch (error) {
-    console.log(error);
+    console.log(error.message)
   }
 };
 
