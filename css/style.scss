@@ -1,15 +1,25 @@
 p {
   margin: 0;
 }
+
 img {
   width: 35px;
-  margin-right: 15px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+img~p{
+  cursor: pointer;
 }
 h1 {
   background-color: #2f5d9e;
   color: #fdda24;
   width: 100%;
   text-align: center;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 #articulos{
     flex-wrap: wrap;
@@ -28,6 +38,15 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 0 10px 10px 0;
 }
+.cl{
+  align-items: center;
+  position: relative;
+  width: 40%;
+  top: 30%;
+  left: 30%;
+  height: 328px;
+  border-radius: 10px;
+}
 .sideBar {
   background-color: #ffdd2f;
   width: 40px;
@@ -35,7 +54,7 @@ h1 {
   transition: 0.3s;
 }
 .sideBar:hover {
-  width: 130px;
+  width: 155px;
 }
 .positionAbsolute{
     position: absolute;

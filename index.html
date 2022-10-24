@@ -16,69 +16,112 @@
     </div>
     <div class="d-flex flex-column positionAbsolute">
         <nav class="sideBar bShadow d-flex flex-column pb-3 pt-3">
-            <div class="mb-2 d-flex flex-row justify-content-start align-items-center">
+            <div class="mb-2 d-flex flex-row justify-content-start align-items-center" id="home">
                 <img src="/assets/icons/home.png" alt="">
-                <button id="home">Return</button>
+                <p>Return</p>
             </div>
-            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center">
-                <img src="/assets/icons/alta.png" alt="" srcset="">
-                <button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal" id="alta">
+            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center" data-bs-toggle="modal" data-bs-target="#modalAlta" id="alta">
+                <img src="/assets/icons/alta.png" alt="" srcset="" >
+                <p  class=""  >
                     Alta
-                  </button>
+                  </p>
             </div>
-            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center">
-                <img src="/assets/icons/delete.png" alt="" srcset="">
-                <button class="" id="baja">Baja</button>
+            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center" id="baja">
+                <img src="/assets/icons/delete.png" alt="" srcset="" >
+                <p class="" >Baja</p>
             </div>
-            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center">
-                <img src="/assets/icons/cambios.png" alt="" srcset="">
-                <button class="" id="modificar">Modificar</button>
+            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center" data-bs-toggle="modal" data-bs-target="#modalCambio" id="modificar">
+                <img src="/assets/icons/cambios.png" alt="" srcset="" >
+                <p type="button" class=""  >
+                    Modificar
+                  </p>
             </div>
-            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center">
-                <img src="/assets/icons/inventario.png" alt="" srcset="">
-                <button class="" id="dcf">Departamentos</button>
+            <div class=" mb-2 d-flex flex-row justify-content-start align-items-center" id="dcf">
+                <img src="/assets/icons/inventario.png" alt="" srcset="" >
+                <p class="" >Departamentos</p>
             </div>
         </nav>
     </div>
-    <div class="d-flex justify-content-center bshadow" id="formSku">
-        <form>
-            <div class="form-group">
+    <div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="statusObjeto">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-danger" id="eliminarArticulo">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="d-flex justify-content-center cl bShadow" id="formSku">
+        <form class="">
+            <div class="form-group mb-2">
               <label for="inputSku">Consulta por Sku</label>
-              <input type="text" class="form-control" id="inputSku" placeholder="Ingresa Sku">
+              <input type="text" class="form-control" id="inputSku" placeholder="Ingresa Sku" maxlength="6">
               <small class="form-text text-muted" id="mensaje">Verifica si el SKU existe</small>
             </div>
             <button class="btn btn-primary" id="buscarSku">Buscar</button>
           </form>
     </div>
-    <div class="d-flex justify-content-center bshadow d-none" id="formSkuEliminar">
+    <div class="d-flex justify-content-center bShadow d-none cl" id="formSkuEliminar">
         <form>
-            <div class="form-group">
-              <label for="inputSkuEliminar">Consulta por Sku</label>
-              <input type="text" class="form-control" id="inputSkuEliminar" placeholder="Ingresa Sku">
+            <div class="form-group mb-2">
+              <label for="inputSkuEliminar">Consulta por Sku para eliminar articulo</label>
+              <input type="text" class="form-control" id="inputSkuEliminar" placeholder="Ingresa Sku" maxlength="6">
               <small class="form-text text-muted" id="mensajeEliminar">Verifica si el SKU existe</small>
             </div>
-            <button class="btn btn-danger" id="eliminarArticulo">Eliminar</button>
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEliminar" id="confirmarEliminar">
+    Eliminar Articulo
+  </button>
           </form>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalAlta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Alta de articulo</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>Sku: </p>
-              <div class="d-flex flex-row justify-content-between">
-              <input type="text" name="" id="sku">
+              <div class="d-flex flex-row justify-content-between align-items-center">
+              <input type="text" name="" id="sku" maxlength="6">
+              <p class="mensajeExiste"></p>
               <button class="btn btn-warning" id="btnValidarSku">Validar</button>
               </div>
               <p>Articulo: </p>
-              <input type="text" name="" id="articulo" disabled>
+              <input type="text" name="" id="articulo" disabled maxlength="15">
               <p>Marca: </p>
-              <input type="text" name="" id="marca" disabled>
+              <input type="text" name="" id="marca" disabled maxlength="15">
               <p>Modelo: </p>
-              <input type="text" name="" id="modelo" disabled>
+              <input type="text" name="" id="modelo" disabled maxlength="20">
               <p>Departamento: </p>
               <select name="" id="departamento" disabled>
                 
@@ -93,19 +136,65 @@
                 
               </select>
               <p>Stock: </p>
-              <input type="text" name="" id="stock" disabled>
+              <input type="number" name="" id="stock" disabled maxlength="9">
               <p>Cantidad: </p>
-              <input type="text" name="" id="cantidad" disabled>
-              <p>Fecha de Alta: </p>
-              <input type="date" name="" id="fechaAlta" disabled>
-              <p>Fecha de Baja: </p>
-              <input type="date" name="" id="fechaBaja" disabled>
-              <label for="Descontinuado">
-                <input type="checkbox" id="descontinuado" disabled />Descontinuado</label>
+              <input type="number" name="" id="cantidad" disabled maxlength="6">
+              <p></p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
               <button type="button" class="btn btn-primary sv" id="guardar" disabled>Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modalCambio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modificar articulo</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Sku: </p>
+              <div class="d-flex flex-row justify-content-between align-items-center">
+              <input type="text" name="" id="skuActualizar" maxlength="6">
+              <p></p>
+              <button class="btn btn-warning" id="btnValidarSkuActualizar">Validar</button>
+              </div>
+              <p>Articulo: </p>
+              <input type="text" name="" id="articuloActualizar" disabled maxlength="15">
+              <p>Marca: </p>
+              <input type="text" name="" id="marcaActualizar" disabled maxlength="15">
+              <p>Modelo: </p>
+              <input type="text" name="" id="modeloActualizar" disabled maxlength="20">
+              <p>Departamento: </p>
+              <select name="" id="departamentoActualizar" disabled >
+                
+                
+              </select>
+              <p>Clase: </p>
+              <select name="" id="claseActualizar" disabled>
+                
+              </select>
+              <p>Familia: </p>
+              <select name="" id="familiaActualizar" disabled>
+                
+              </select>
+              <p>Stock: </p>
+              <input type="text" name="" id="stockActualizar" disabled maxlength="9">
+              <p>Cantidad: </p>
+              <input type="text" name="" id="cantidadActualizar" disabled maxlength="9">
+              <p>Fecha de Alta: </p>
+              <input type="text" name="" id="fechaAltaActualizar" disabled>
+              <p>Fecha de Baja: </p>
+              <input type="text" name="" id="fechaBajaActualizar" disabled>
+              <label for="Descontinuado">
+                <input type="checkbox" id="descontinuadoActualizar" disabled />Descontinuado</label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary sv" id="guardarActualizar" disabled>Actualizar</button>
             </div>
           </div>
         </div>
