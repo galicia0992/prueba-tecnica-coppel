@@ -37,6 +37,9 @@ input[type=number]::-webkit-outer-spin-button {
   transform: scale(1.1);
   transition: 0.5s;
 }
+.modalTamano{
+  width: 550px;
+}
 .inputWarning{
     border-color: red;
 }

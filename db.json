@@ -13,6 +13,20 @@
       "fechaAlta": "2022/10/24",
       "fechaBaja": "2022/10/24",
       "descontinuado": true
+    },
+    {
+      "id": 2,
+      "articulo": "prueba",
+      "marca": "orye",
+      "modelo": "prorie",
+      "departamento": "electronica",
+      "clase": "",
+      "familia": "",
+      "stock": "10",
+      "cantidad": "2",
+      "fechaAlta": "2022/10/24",
+      "fechaBaja": "2022/10/24",
+      "descontinuado": true
     }
   ],
   "departamentosClasesFamilias": [
