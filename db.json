@@ -1,60 +1,18 @@
 {
   "articulos": [
     {
-      "id": 2,
-      "articulo": "prueba",
-      "marca": "prueba",
-      "modelo": "prueba",
-      "departamento": "mueble suelto",
-      "clase": "",
-      "familia": "",
-      "stock": "1",
-      "cantidad": "1",
-      "fechaAlta": "2022/10/23",
-      "fechaBaja": "",
-      "descontinuado": false
-    },
-    {
-      "id": 3,
-      "articulo": "prueba3",
-      "marca": "prueba3",
-      "modelo": "prueba",
-      "departamento": "electronica",
-      "clase": "",
-      "familia": "",
-      "stock": "10",
-      "cantidad": "3",
-      "fechaAlta": "2022/10/23",
-      "fechaBaja": "2022/10/23",
-      "descontinuado": ""
-    },
-    {
-      "id": 4,
+      "id": 1,
       "articulo": "",
       "marca": "",
       "modelo": "",
       "departamento": "domesticos",
       "clase": "",
       "familia": "",
-      "stock": "",
-      "cantidad": "",
-      "fechaAlta": "2022/10/23",
-      "fechaBaja": "",
-      "descontinuado": ""
-    },
-    {
-      "id": 1,
-      "articulo": "prueba",
-      "marca": "prrueb",
-      "modelo": "fsfs",
-      "departamento": "electronica",
-      "clase": "auto stereos",
-      "familia": "con cd",
-      "stock": 10,
-      "cantidad": 2,
+      "stock": "4",
+      "cantidad": "1",
       "fechaAlta": "2022/10/24",
-      "fechaBaja": "",
-      "descontinuado": ""
+      "fechaBaja": "2022/10/24",
+      "descontinuado": true
     }
   ],
   "departamentosClasesFamilias": [

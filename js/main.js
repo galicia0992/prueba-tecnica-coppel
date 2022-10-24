@@ -5,19 +5,29 @@ import {
   dcfLlamado,
   eliminarRegistro,
 } from "./API.js";
+
+//selectores de barra flotante
 const home = document.querySelector("#home");
 const alta = document.querySelector("#alta");
 const baja = document.querySelector("#baja");
 const modificar = document.querySelector("#modificar");
 const dcf = document.querySelector("#dcf");
+
+//selectores tablas
 const tablaDepartamentos = document.querySelector("#tablaDepartamentos");
 const tablaArticulos = document.querySelector("#tablaArticulos");
+
+//selectores de encabezados de tablas
 const hdDepartamentos = document.querySelector("#hdDepartamentos");
 const hdArticulos = document.querySelector("#hdArticulos");
+
+//selectores de inputs de consulta
 const buscarSku = document.querySelector("#buscarSku");
 const inputSku = document.querySelector("#inputSku");
 const mensaje = document.querySelector("#mensaje");
 const formSku = document.querySelector("#formSku");
+
+//selectores de inputs de alta
 const skuId = document.querySelector("#sku");
 const articuloId = document.querySelector("#articulo");
 const marcaId = document.querySelector("#marca");
@@ -27,31 +37,32 @@ const claseId = document.querySelector("#clase");
 const familiaId = document.querySelector("#familia");
 const stockId = document.querySelector("#stock");
 const cantidadId = document.querySelector("#cantidad");
-const fechaAltaId = document.querySelector("#fechaAlta");
-const fechaBajaId = document.querySelector("#fechaBaja");
-const descontinuadoId = document.querySelector("#descontinuado");
 const guardar = document.querySelector("#guardar");
+
+//selector de boton para validar sku para alta
 const btnValidarSku = document.querySelector("#btnValidarSku");
+
+//selector de boton para hacer el POST al json
 const skuActualizar = document.querySelector("#skuActualizar");
+
+//selectores de input para cambios de articulos
 const articuloActualizar = document.querySelector("#articuloActualizar");
 const marcaActualizar = document.querySelector("#marcaActualizar");
 const modeloActualizar = document.querySelector("#modeloActualizar");
-const departamentoActualizar = document.querySelector(
-  "#departamentoActualizar"
-);
+const departamentoActualizar = document.querySelector("#departamentoActualizar");
 const claseActualizar = document.querySelector("#claseActualizar");
 const familiaActualizar = document.querySelector("#familiaActualizar");
 const stockActualizar = document.querySelector("#stockActualizar");
 const cantidadActualizar = document.querySelector("#cantidadActualizar");
 const fechaAltaActualizar = document.querySelector("#fechaAltaActualizar");
 const fechaBajaActualizar = document.querySelector("#fechaBajaActualizar");
-const descontinuadoActualizar = document.querySelector(
-  "#descontinuadoActualizar"
-);
+const descontinuadoActualizar = document.querySelector("#descontinuadoActualizar");
+
+//selector para hacer PUT al json 
 const guardarActualizar = document.querySelector("#guardarActualizar");
-const btnValidarSkuActualizar = document.querySelector(
-  "#btnValidarSkuActualizar"
-);
+
+//selector para validar el sku del articulo a modificar
+const btnValidarSkuActualizar = document.querySelector("#btnValidarSkuActualizar");
 const formSkuEliminar = document.querySelector("#formSkuEliminar");
 const inputSkuEliminar = document.querySelector("#inputSkuEliminar");
 const mensajeEliminar = document.querySelector("#mensajeEliminar");
@@ -81,6 +92,7 @@ modificar.addEventListener("click", botonModificar);
 guardarActualizar.addEventListener("click", guardarAltaActualizar);
 //libera los campos si el sku no existe, caso contrario los bloquea
 async function validarSku() {
+    (skuId.classList.remove("shake-horizontal"))
   const datos = await articulos();
   const arrComp = [];
   datos.forEach((item) => {
@@ -101,6 +113,7 @@ async function validarSku() {
         (cantidadId.disabled = false),
         (guardar.disabled = false))
       : (skuId.classList.add("inputWarning"),
+      (skuId.classList.add("shake-horizontal")),
         (skuId.nextElementSibling.innerHTML = "El Sku buscado ya existe"),
         (articuloId.disabled = true),
         (marcaId.disabled = true),
@@ -112,6 +125,7 @@ async function validarSku() {
         (cantidadId.disabled = true),
         (guardar.disabled = true))
     : (skuId.classList.add("inputWarning"),
+    (skuId.classList.add("shake-horizontal")),
       (skuId.nextElementSibling.innerHTML = "Introduce solo numeros"),
       (articuloId.disabled = true),
       (marcaId.disabled = true),
@@ -196,12 +210,14 @@ async function mostrarArticulos(e) {
 //si no existe un resultado, resalta el input en rojo y muestra mensaje de error, caso contrario lo regresa a su estado original
 function errores() {
   if (!document.querySelector(".articulos")) {
+    inputSku.classList.add("shake-horizontal")
     inputSku.classList.add("inputWarning");
     mensaje.classList.remove("text-muted");
     mensaje.classList.add("mensajeWarning");
     mensaje.innerHTML = "El SKU no existe o es valido";
     tablaArticulos.classList.add("d-none");
   } else {
+    inputSku.classList.remove("shake-horizontal")
     tablaArticulos.classList.remove("d-none");
     inputSku.classList.remove("inputWarning");
     mensaje.classList.add("text-muted");
@@ -230,6 +246,10 @@ async function botonAlta() {
   stockId.value = "";
   cantidadId.value = "";
   skuId.classList.remove("inputWarning");
+  skuId.classList.remove("shake-horizontal"),
+  cantidadId.classList.remove("shake-horizontal"),
+  cantidadId.classList.remove("inputWarning"),
+  cantidadId.nextElementSibling.innerHTML = "",
   skuId.nextElementSibling.innerHTML = "";
   articuloId.disabled = true;
   marcaId.disabled = true;
@@ -289,30 +309,23 @@ function guardarAlta() {
     fechaBaja: "",
     descontinuado: "",
   };
-  isNaN(altaObj.id) == true
+  isNaN(altaObj.id) == true 
     ? (skuId.classList.add("inputWarning"),
       (skuId.nextElementSibling.innerHTML = "Introduce solo numeros"))
     : (skuId.classList.remove("inputWarning"),
       (skuId.nextElementSibling.innerHTML = ""),
       parseInt(cantidadId.value) > parseInt(stockId.value)
         ? (cantidadId.classList.add("inputWarning"),
+        (cantidadId.classList.add("shake-horizontal")),
           (cantidadId.nextElementSibling.innerHTML =
             "la cantidad no debe ser mayor al stock"))
         : (altaArticulo(altaObj),
+        (cantidadId.classList.remove("shake-horizontal")),
           cantidadId.classList.remove("inputWarning"),
           (cantidadId.nextElementSibling.innerHTML = "")));
 }
 
-async function eliminar(e) {
-  e.preventDefault();
-  const datos = await articulos();
-  datos
-    .filter((item) => item.id == parseInt(inputSkuEliminar.value))
-    .map((item2) => {
-      eliminarRegistro(item2.id);
-    });
-    
-}
+
 async function mostrarStatusObjeto(e) {
     e.preventDefault()
   const datos = await articulos();
@@ -332,7 +345,18 @@ async function mostrarStatusObjeto(e) {
       (statusObjeto.innerHTML = `el sku no existe o el campo esta vacio`));
       
 }
+async function eliminar(e) {
+    e.preventDefault();
+    const datos = await articulos();
+    datos
+      .filter((item) => item.id == parseInt(inputSkuEliminar.value))
+      .map((item2) => {
+        eliminarRegistro(item2.id);
+      });
+      
+  }
 async function validarSkuActualizar() {
+    (skuActualizar.classList.remove("shake-horizontal"))
   const datos = await articulos();
   const arrComp = [];
   datos
@@ -386,8 +410,12 @@ async function validarSkuActualizar() {
       (guardarActualizar.disabled = true),
       (descontinuadoActualizar.disabled = true),
       (skuActualizar.classList.add("inputWarning")),
+      (skuActualizar.classList.add("shake-horizontal")),
         (skuActualizar.nextElementSibling.innerHTML = "El Sku buscado no existe"))
-    : ((skuActualizar.disabled = true),
+    : ((skuId.classList.remove("shake-horizontal")),
+    (skuActualizar.classList.remove("inputWarning")),
+    (skuActualizar.nextElementSibling.innerHTML = ""),
+    (skuActualizar.disabled = true),
       (articuloActualizar.disabled = false),
       (marcaActualizar.disabled = false),
       (modeloActualizar.disabled = false),
@@ -402,6 +430,19 @@ async function validarSkuActualizar() {
 }
 
 async function botonModificar() {
+    skuActualizar.classList.remove("inputWarning")
+    skuActualizar.nextElementSibling.innerHTML = ""
+    skuActualizar.classList.remove("shake-horizontal")
+    skuActualizar.disabled = false
+    skuActualizar.value = ""
+    articuloActualizar.value = ""
+    marcaActualizar.value = ""
+    modeloActualizar.value = ""
+    stockActualizar.value = ""
+    cantidadActualizar.value = ""
+    fechaAltaActualizar.value = ""
+    fechaBajaActualizar.value = ""
+    descontinuadoActualizar.checked = false
   const datos = await dcfLlamado();
   datos.map((infoDcf) => {
     departamentoActualizar.innerHTML = "";
@@ -451,13 +492,16 @@ function guardarAltaActualizar() {
   };
   parseInt(cantidadActualizar.value) > parseInt(stockActualizar.value)
         ? (cantidadActualizar.classList.add("inputWarning"),
+        (cantidadActualizar.classList.add("shake-horizontal")),
           (cantidadActualizar.nextElementSibling.innerHTML =
             "la cantidad no debe ser mayor al stock"))
         : (actualizarObjeto(altaObjActualizado),
           cantidadActualizar.classList.remove("inputWarning"),
+          (cantidadActualizar.classList.remove("shake-horizontal")),
           (cantidadActualizar.nextElementSibling.innerHTML = ""))
   
 }
 function inicio() {
   location.reload();
 }
+
